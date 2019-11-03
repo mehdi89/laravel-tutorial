@@ -16,3 +16,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('triangle', "APIController@triangle"); 
+Route::get('triangle/{n}', "APIController@triangle"); 
+Route::get('sleep/{n}', "APIController@sleep"); 
