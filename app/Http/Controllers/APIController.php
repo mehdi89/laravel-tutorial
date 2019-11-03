@@ -6,6 +6,27 @@ use Illuminate\Http\Request;
 
 class APIController extends Controller
 {
+
+    public function stress($n=100000000) {
+        $time = microtime();
+        $time = explode(' ', $time);
+        $time = $time[1] + $time[0];
+        $start = $time;
+
+        // CPU stress test
+        $a = 0; 
+        for($i = 0; $i < 100000000; $i++) {
+            $a += $i;
+        }
+
+        $time = microtime();
+        $time = explode(' ', $time);
+        $time = $time[1] + $time[0];
+        $finish = $time;
+        $total_time = round(($finish - $start), 4);
+        echo 'Page generated in '.$total_time.' seconds.';
+
+    }
     public function sleep($time=10){
         // current time
         echo date('h:i:s') . "\n";

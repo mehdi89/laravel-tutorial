@@ -17,6 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('triangle', "APIController@triangle"); 
+Route::get('stress', "APIController@stress"); 
+Route::get('stress/{n}', "APIController@stress"); 
 Route::get('triangle/{n}', "APIController@triangle"); 
 Route::get('sleep/{n}', "APIController@sleep"); 
